@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A44093BF-ED90-4977-B4D9-808BD52E887A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpOpen.Net.TcpSoftRouter</RootNamespace>
+    <AssemblyName>SharpOpen.Net.TcpSoftRouter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementations\ConnectionImp.cs" />
+    <Compile Include="Implementations\ServerImp.cs" />
+    <Compile Include="Processor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servers.cs" />
+    <Compile Include="Installers\ServiceStarter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installers\ServiceStarter.Designer.cs">
+      <DependentUpon>ServiceStarter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcpSoftRouter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TcpSoftRouter.Designer.cs">
+      <DependentUpon>TcpSoftRouter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcpSoftRouterAdmin.cs" />
+    <Compile Include="Installers\TcpSoftRouterInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installers\TcpSoftRouterInstaller.Designer.cs">
+      <DependentUpon>TcpSoftRouterInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcpSoftRouterResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TcpSoftRouterResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TcpSoftRouterWebAdmin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xslt\html.xslt" />
+    <None Include="xslt\telnet.xslt" />
+    <None Include="xslt\testresponse.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TcpSoftRouter.resx">
+      <DependentUpon>TcpSoftRouter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TcpSoftRouterResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TcpSoftRouterResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpOpen.Net\SharpOpen.Net.csproj">
+      <Project>{22EE396B-C5DC-49A8-ADC6-CFD757CAB1D4}</Project>
+      <Name>SharpOpen.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

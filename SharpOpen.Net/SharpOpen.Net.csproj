@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22EE396B-C5DC-49A8-ADC6-CFD757CAB1D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpOpen.Net</RootNamespace>
+    <AssemblyName>SharpOpen.Net</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Diag\PerformanceCounters.cs" />
+    <Compile Include="HttpProxy.cs" />
+    <Compile Include="Implementation.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Traceable.cs" />
+    <Compile Include="Observers\ConnectionObservers\BufferedConnectionObserver.cs" />
+    <Compile Include="Observers\ConnectionObservers\DefaultConnectionObserver.cs" />
+    <Compile Include="Observers\ConnectionObservers\PortRedirectOverSocksConnectionObserver.cs" />
+    <Compile Include="Observers\ConnectionObservers\SocksConnectionObserver.cs" />
+    <Compile Include="Observers\ConnectionObservers\TransmissionRedirectConnectionObserver.cs" />
+    <Compile Include="Observers\ConnectionObservers\WebProxyConnectionObserver.cs" />
+    <Compile Include="Observers\IConnectionObserver.cs" />
+    <Compile Include="Observers\IServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\DefaultServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\PortRedirectOverSocksServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\PortRedirectOverTunnelServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\SocksOverTunnelServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\SocksServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\TransmissionRedirectServerObserver.cs" />
+    <Compile Include="Observers\ServerObservers\WebProxyServerObserver.cs" />
+    <Compile Include="Performance.cs" />
+    <Compile Include="PerformanceCounterInstallProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PerformanceCounterInstallProvider.Designer.cs">
+      <DependentUpon>PerformanceCounterInstallProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Socks\Socks4Request.cs" />
+    <Compile Include="Socks\Socks4Response.cs" />
+    <Compile Include="Socks\SocksCommon.cs" />
+    <Compile Include="TunnelWaitHandle.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

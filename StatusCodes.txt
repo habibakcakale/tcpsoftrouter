@@ -1,0 +1,12 @@
+200 OK
+500 Syntax Error / Invalid Command Arguments
+501 Overflow: Port is out of range of valid port range
+502 The local port is already in use
+503 DNS Error (Host name could not be resolved)
+504 Failed to connect to Remote Host
+505 Failed to connect to Socks Server
+506 Unknown Internal Error
+507 Test Failed (Unknown)
+508 Unknown Command
+
+

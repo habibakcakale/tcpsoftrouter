@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<response statuscode="200" statusmessage="Servers Listed">
+  <servers count="1">
+    <server localport="7401" servertype="1" sockshost="10.240.244.78" socksport="110" remotehost="10.240.244.77" remoteport="7401" isrunning="1" />
+    <server localport="7401" servertype="3" isrunning="1" />
+  </servers>
+</response>
