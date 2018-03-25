@@ -23,37 +23,38 @@
           a:hover { text-decoration:underline; }
         </style>
         <script language="javascript" type="text/javascript">
-          var $ = document.getElementById;
-          function postback(command)
-          {
-          if (command.indexOf("REMOVE ") == 0)
-          {
-          if (!confirm("Are you sure you wan't to remove the server ?")) return;
-          }
-          $("postbackcommand").value = command;
-          document.forms[0].submit();
-          }
-          function postbackadd()
-          {
-          switch($("servertype").value)
-          {
-          case "1":
-          $("postbackcommand").value = "ADD " + $("localport").value + " " + $("remotehost").value + " " + $("remoteport").value;
-          break;
-          case "2":
-          $("postbackcommand").value = "ADD " + $("localport").value + " SOCKS " +      " " + $("sockshost").value + " " + $("socksport").value + " " + $("remotehost").value + " " + $("remoteport").value;
-          break;
-          case "3":
-          $("postbackcommand").value = "SOCKS " + $("localport").value;
-          break;
-          }
-          document.forms[0].submit();
-          }
-          function traceswitch(localport)
-          {
-          $("postbackcommand").value = "TRACE " + localport + " " + ($("traceswitch_" + localport).checked ? "ENABLE" : "DISABLE");
-          document.forms[0].submit();
-          }
+			function postback(command) {
+				if (command.indexOf("REMOVE ") == 0) {
+					if (!confirm("Are you sure you wan't to remove the server ?")) return;
+				}
+				document.getElementById("postbackcommand").value = command;
+				document.forms[0].submit();
+			}
+			function postbackadd() {
+				var serverType = document.getElementById("servertype");
+				var postbackcommand = document.getElementById("postbackcommand");
+				var localPort = document.getElementById("localport");
+				var remoteHost = document.getElementById("remotehost");
+				var remotePort = document.getElementById("remoteport");
+				var socksHost = document.getElementById("sockshost");
+				var socksPort = document.getElementById("socksport");
+				switch (serverType.value) {
+					case "1":
+						postbackcommand.value = "ADD " + localPort.value + " " + remoteHost.value + " " + remotePort.value;
+						break;
+					case "2":
+						postbackcommand.value = "ADD " + localPort.value + " SOCKS " + " " + socksHost.value + " " + socksPort.value + " " + remoteHost.value + " " + remotePort.value;
+						break;
+					case "3":
+						postbackcommand.value = "SOCKS " + localPort.value;
+						break;
+				}
+				document.forms[0].submit();
+			}
+			function traceswitch(localport) {
+				document.getElementById("postbackcommand").value = "TRACE " + localport + " " + (document.getElementById("traceswitch_" + localport).checked ? "ENABLE" : "DISABLE");
+				document.forms[0].submit();
+			}
         </script>
       </head>
       <body class="font">
