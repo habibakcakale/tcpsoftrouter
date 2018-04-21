@@ -8,7 +8,7 @@ Tcp Soft Router provides tcp communication routing, runs as a windows service, a
 - Socks Server
 
 
-Please browse http://localhost:17001 (With IE7)
+Please browse http://localhost:17001
 or
 Telnet to localhost:17000
 
